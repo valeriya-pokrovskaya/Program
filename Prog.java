@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -18,18 +18,18 @@ private BufferedImage image;
  
 	public Prog()
 	{
-		super("О программе");
+		super("Рћ РїСЂРѕРіСЂР°РјРјРµ");
 		setSize(520, 250);
 		JPanel p = new JPanel();
         p.setLayout(null);
         //setResizable(false);
         
-        JLabel  l = new JLabel("О программе"); 
+        JLabel  l = new JLabel("Рћ РїСЂРѕРіСЂР°РјРјРµ"); 
         l.setBounds(5, 5, 85, 20);	
         l.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
         p.add(l);
         
-        JLabel l1 = new JLabel("Программа 'Учет кроликов' предназначена для хранения информации о кроликах");   
+        JLabel l1 = new JLabel("РџСЂРѕРіСЂР°РјРјР° 'РЈС‡РµС‚ РєСЂРѕР»РёРєРѕРІ' РїСЂРµРґРЅР°Р·РЅР°С‡РµРЅР° РґР»СЏ С…СЂР°РЅРµРЅРёСЏ РёРЅС„РѕСЂРјР°С†РёРё Рѕ РєСЂРѕР»РёРєР°С…");   
         l1.setBounds(5, 30, 500, 20);	
         p.add(l1);
         	
@@ -37,7 +37,7 @@ private BufferedImage image;
         l2.setBounds(70, 60, 350, 100);	
         p.add(l2);
         
-        JLabel l3 = new JLabel("Версия 1.0", JLabel.CENTER);    
+        JLabel l3 = new JLabel("Р’РµСЂСЃРёСЏ 1.0", JLabel.CENTER);    
         l3.setBounds(200, 170, 100, 20);	
         p.add(l3);
        
