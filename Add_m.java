@@ -29,7 +29,7 @@ public class Add_m extends JFrame{
 	String name_m="", name_p="", name_mb="", name_md="", name_pb="", name_pd="", n="";
 	
 	public Add_m(){
-		JFrame f = new JFrame("Добавление нового кролика мужского пола");
+		JFrame f = new JFrame("Добавление самца");
 		JTabbedPane jtp = new JTabbedPane();
 		f.getContentPane().add(jtp);
 		Font font = new Font("Segoe Script",  Font.BOLD,  12);
