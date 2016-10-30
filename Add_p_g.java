@@ -19,10 +19,10 @@ import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
-public class Add_p_m {
+public class Add_p_g {
 
-	public JLabel l, l1, l2, l3;
-	private JTextField text, text1, text2;
+	 public JLabel l, l1, l2, l3;
+	private JTextField text;
 	private JButton b, b1;
 	public JPanel p;
 	String name="", srok="", data="";
@@ -30,7 +30,7 @@ public class Add_p_m {
 	
 	
 	
-	Add_p_m(int row, String name_table, String login){
+	Add_p_g(int row, String name_table, String login){
 		KModel4 m = new KModel4(true); 
 		ArrayList<String> a = new ArrayList<String>();
 	     a = m.getPriv(); 
@@ -112,7 +112,7 @@ public class Add_p_m {
 	    
 	    b.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                KModel m = new KModel(true);
+                KModel2 m = new KModel2(true);
                 data = text.getText();
                 name = ch.getSelectedItem();;
                 srok = ch1.getSelectedItem();;
@@ -124,7 +124,7 @@ public class Add_p_m {
                     count = rs.getInt(1);
                 }  
                 } catch (SQLException | ClassNotFoundException | IOException ex) {
-                    Logger.getLogger(KModel.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(KModel2.class.getName()).log(Level.SEVERE, null, ex);
                 }
             	
             	try {
@@ -133,9 +133,9 @@ public class Add_p_m {
                     System.out.println(id);
                     m.connect().executeUpdate(query);
                 } catch (SQLException | ClassNotFoundException | IOException ex) {
-                    Logger.getLogger(KModel.class.getName()).log(Level.SEVERE, null, ex);
+                    Logger.getLogger(KModel2.class.getName()).log(Level.SEVERE, null, ex);
             }   
-            	new Priv_m(row, login);
+            	new Priv_g(row, login);
                 fr.dispose();
             }
             
