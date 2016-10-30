@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.Font;
 import java.awt.event.*;
@@ -17,7 +17,7 @@ public class registraciya extends JFrame{
 	static String login,password, password1; 
 	
 	registraciya(){
-	super("Регистрация");
+	super("Р РµРіРёСЃС‚СЂР°С†РёСЏ");
 		
 	    
 	baza = new KFDB("com.mysql.jdbc.Driver", "jdbc:mysql://mysql80.1gb.ru/gb_x_lera99", "gb_x_lera99", "a77z3fc3qw"); 
@@ -26,7 +26,7 @@ public class registraciya extends JFrame{
 	p = new JPanel();
     p.setLayout(null);
 	
-    l = new JLabel("Логин");
+    l = new JLabel("Р›РѕРіРёРЅ");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(f);
 	p.add(l);
@@ -35,7 +35,7 @@ public class registraciya extends JFrame{
 	text.setBounds(90, 30, 160, 20);
     p.add(text);
   
-	l1 = new JLabel("Пароль"); 
+	l1 = new JLabel("РџР°СЂРѕР»СЊ"); 
 	l1.setBounds(90, 55, 50, 25);
 	l1.setFont(f);
 	p.add(l1);
@@ -44,7 +44,7 @@ public class registraciya extends JFrame{
     text1.setBounds(90, 80, 160, 20);
     p.add(text1);
     
-    l2 = new JLabel("Повторите пароль"); 
+    l2 = new JLabel("РџРѕРІС‚РѕСЂРёС‚Рµ РїР°СЂРѕР»СЊ"); 
 	l2.setBounds(90, 105, 150, 25);
 	l2.setFont(f);
 	p.add(l2);
@@ -53,13 +53,13 @@ public class registraciya extends JFrame{
     text2.setBounds(90, 135, 160, 20);
     p.add(text2);
     
-	b = new JButton("Регистрация");
+	b = new JButton("Р РµРіРёСЃС‚СЂР°С†РёСЏ");
     b.setBounds(20, 170, 130, 20);
     b.setVisible(true);
     b.setFont(f);
     p.add(b);
     
-    b1 = new JButton("Выход");
+    b1 = new JButton("Р’С‹С…РѕРґ");
     b1.setBounds(185, 170, 130, 20);
     b1.setVisible(true);
     b1.setFont(f);
@@ -78,11 +78,11 @@ public class registraciya extends JFrame{
         	baza.regictraciya(login, password);	
         	}
             else{
-        	 JOptionPane.showMessageDialog(null, "Пароли не совпадают!", "Ошибка ввода", JOptionPane.ERROR_MESSAGE);
+        	 JOptionPane.showMessageDialog(null, "РџР°СЂРѕР»Рё РЅРµ СЃРѕРІРїР°РґР°СЋС‚!", "РћС€РёР±РєР° РІРІРѕРґР°", JOptionPane.ERROR_MESSAGE);
         	}
             
-            if(text.getText()=="") JOptionPane.showMessageDialog(null, "Не введен логин!", "Ошибка ввода", JOptionPane.ERROR_MESSAGE);
-            if(password1==null && password1==null) JOptionPane.showMessageDialog(null, "Не введен пароль!", "Ошибка ввода", JOptionPane.ERROR_MESSAGE);
+            if(text.getText()=="") JOptionPane.showMessageDialog(null, "РќРµ РІРІРµРґРµРЅ Р»РѕРіРёРЅ!", "РћС€РёР±РєР° РІРІРѕРґР°", JOptionPane.ERROR_MESSAGE);
+            if(password1==null && password1==null) JOptionPane.showMessageDialog(null, "РќРµ РІРІРµРґРµРЅ РїР°СЂРѕР»СЊ!", "РћС€РёР±РєР° РІРІРѕРґР°", JOptionPane.ERROR_MESSAGE);
             baza.create_table_m(login);
             baza.create_table_g(login);
             baza.create_table_priv(login);
@@ -91,7 +91,7 @@ public class registraciya extends JFrame{
             baza.create_table_rashod(login);
             baza.create_table_zooplan(login);
             baza.create_table_adres(login);
-        	JOptionPane.showMessageDialog(null, "Регистрация прошла успешно!", "Успех", JOptionPane.INFORMATION_MESSAGE);
+        	JOptionPane.showMessageDialog(null, "Р РµРіРёСЃС‚СЂР°С†РёСЏ РїСЂРѕС€Р»Р° СѓСЃРїРµС€РЅРѕ!", "РЈСЃРїРµС…", JOptionPane.INFORMATION_MESSAGE);
         }
     });
 	

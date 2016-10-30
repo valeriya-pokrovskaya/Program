@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 
 import javax.swing.*;
@@ -21,13 +21,13 @@ public class Weight_m {
 	
     public Weight_m(int row, String login){	
 
-	JFrame f = new JFrame("Вес кролика");
+	JFrame f = new JFrame("Р’РµСЃ РєСЂРѕР»РёРєР°");
 	f.setSize(500, 380);
     f.setLocationRelativeTo(null);
     f.getContentPane().setLayout(new FlowLayout());
     Font font = new Font("Segoe Script",  Font.BOLD,  12);
     Font font1 = new Font("Segoe Script",  Font.BOLD,  14);
-    JLabel l = new JLabel("Вес кролика");
+    JLabel l = new JLabel("Р’РµСЃ РєСЂРѕР»РёРєР°");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(font1);
 	f.getContentPane().add(l);
@@ -47,13 +47,13 @@ public class Weight_m {
             String in = "";
             try{    
            
-              String query = "SELECT  `Идент. номер` FROM  `_m` WHERE  `id` =  '"+id+"'";
+              String query = "SELECT  `РРґРµРЅС‚. РЅРѕРјРµСЂ` FROM  `_m` WHERE  `id` =  '"+id+"'";
               ResultSet rs = dbm.connect().executeQuery(query);
               while (rs.next()) {
                   in = rs.getString(1);
               } 
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             String name_table = login + "_w"+ "_m"+ "_" + in;
             ResultSet rs = st.executeQuery("SELECT * FROM `"+name_table+"`");
@@ -66,7 +66,7 @@ public class Weight_m {
             dbm.setDataSource(rs);
             
             
-    		l1 = new JLabel("Идентификатор кролика:"); 
+    		l1 = new JLabel("РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєСЂРѕР»РёРєР°:"); 
     		l1.setBounds(65, 90, 400, 25);
     		l1.setFont(font);
     		f.getContentPane().add(l1);
@@ -77,7 +77,7 @@ public class Weight_m {
     	    text.setEditable(false);
     	    f.getContentPane().add(text);
     	    
-    	    b = new JButton("Добавить новый вес кролика");
+    	    b = new JButton("Р”РѕР±Р°РІРёС‚СЊ РЅРѕРІС‹Р№ РІРµСЃ РєСЂРѕР»РёРєР°");
     	    b.setVisible(true);
     	    b.setFont(font);
     	    f.getContentPane().add(b);
@@ -91,7 +91,7 @@ public class Weight_m {
 f.setResizable(false);
   	    f.setVisible(true);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Вы не выбрали кролика!", "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Р’С‹ РЅРµ РІС‹Р±СЂР°Р»Рё РєСЂРѕР»РёРєР°!", "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }
         
           

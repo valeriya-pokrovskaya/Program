@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 
 import javax.swing.*;
@@ -23,13 +23,13 @@ public class Rod_g {
 	
     public Rod_g(int row, String login){	
 
-	JFrame f = new JFrame("Родовод кролика");
+	JFrame f = new JFrame("Р РѕРґРѕРІРѕРґ РєСЂРѕР»РёРєР°");
 	f.setSize(900, 180);
     f.setLocationRelativeTo(null);
     f.getContentPane().setLayout(new FlowLayout());
     Font font = new Font("Segoe Script",  Font.BOLD,  12);
     Font font1 = new Font("Segoe Script",  Font.BOLD,  14);
-    JLabel l = new JLabel("Родовод кролика");
+    JLabel l = new JLabel("Р РѕРґРѕРІРѕРґ РєСЂРѕР»РёРєР°");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(font1);
 	f.getContentPane().add(l);
@@ -49,13 +49,13 @@ public class Rod_g {
             String in = "";
             try{    
            
-              String query = "SELECT  `Идент. номер` FROM  `_g` WHERE  `id` =  '"+id+"'";
+              String query = "SELECT  `РРґРµРЅС‚. РЅРѕРјРµСЂ` FROM  `_g` WHERE  `id` =  '"+id+"'";
               ResultSet rs = dbm.connect().executeQuery(query);
               while (rs.next()) {
                   in = rs.getString(1);
               } 
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             String name_table = login + "_rod"+ "_g"+ "_" + in;
             ResultSet rs = st.executeQuery("SELECT * FROM `"+name_table+"`");
@@ -68,7 +68,7 @@ public class Rod_g {
             dbm.setDataSource(rs);
             
             
-    		l1 = new JLabel("Идентификатор кролика:"); 
+    		l1 = new JLabel("РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєСЂРѕР»РёРєР°:"); 
     		l1.setBounds(65, 90, 400, 25);
     		l1.setFont(font);
     		f.getContentPane().add(l1);
@@ -83,7 +83,7 @@ public class Rod_g {
   	         f.setVisible(true);   
 
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Вы не выбрали кролика!", "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Р’С‹ РЅРµ РІС‹Р±СЂР°Р»Рё РєСЂРѕР»РёРєР°!", "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }
         
           

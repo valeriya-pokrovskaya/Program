@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 
 import javax.swing.*;
@@ -23,13 +23,13 @@ public class sl_okr {
 	
     public sl_okr(int row, String login){	
 
-	JFrame f = new JFrame("Случки и окрол");
+	JFrame f = new JFrame("РЎР»СѓС‡РєРё Рё РѕРєСЂРѕР»");
 	f.setSize(700, 400);
     f.setLocationRelativeTo(null);
     f.getContentPane().setLayout(new FlowLayout());
     Font font = new Font("Segoe Script",  Font.BOLD,  12);
     Font font1 = new Font("Segoe Script",  Font.BOLD,  14);
-    JLabel l = new JLabel("Случки и окрол");
+    JLabel l = new JLabel("РЎР»СѓС‡РєРё Рё РѕРєСЂРѕР»");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(font1);
 	f.getContentPane().add(l);
@@ -49,13 +49,13 @@ public class sl_okr {
             String in = "";
             try{    
            
-              String query = "SELECT  `Идент. номер` FROM  `_g` WHERE  `id` =  '"+id+"'";
+              String query = "SELECT  `РРґРµРЅС‚. РЅРѕРјРµСЂ` FROM  `_g` WHERE  `id` =  '"+id+"'";
               ResultSet rs = dbm.connect().executeQuery(query);
               while (rs.next()) {
                   in = rs.getString(1);
               } 
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             String name_table = login + "_sl_okr"+ "_" + in;
             ResultSet rs = st.executeQuery("SELECT * FROM `"+name_table+"`");
@@ -68,7 +68,7 @@ public class sl_okr {
             dbm.setDataSource(rs);
             
             
-    		l1 = new JLabel("Идентификатор кролика:"); 
+    		l1 = new JLabel("РРґРµРЅС‚РёС„РёРєР°С‚РѕСЂ РєСЂРѕР»РёРєР°:"); 
     		l1.setBounds(65, 90, 400, 25);
     		l1.setFont(font);
     		f.getContentPane().add(l1);
@@ -80,7 +80,7 @@ public class sl_okr {
     	    f.getContentPane().add(text);
     	    
     	    
-    	    b = new JButton("Добавление новой случки");
+    	    b = new JButton("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ СЃР»СѓС‡РєРё");
     	    b.setBounds(10, 220, 130, 20);
     	    b.setVisible(true);
     	    b.setFont(font);
@@ -98,7 +98,7 @@ public class sl_okr {
   	         f.setVisible(true);   
 
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Вы не выбрали кролика!", "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Р’С‹ РЅРµ РІС‹Р±СЂР°Р»Рё РєСЂРѕР»РёРєР°!", "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }
         
           

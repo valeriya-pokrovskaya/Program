@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 
 import javax.swing.*;
@@ -23,12 +23,12 @@ public class Rashod {
     	
     DefaultTableModel dm = new DefaultTableModel(); 
     String name_table= login + "_rashod";	
-	JFrame f = new JFrame("Учет расхода корма");
+	JFrame f = new JFrame("РЈС‡РµС‚ СЂР°СЃС…РѕРґР° РєРѕСЂРјР°");
 	f.setSize(380, 460);
     f.setLocationRelativeTo(null);
     f.getContentPane().setLayout(new FlowLayout());
     Font font = new Font("Segoe Script",  Font.BOLD,  12);
-    JLabel l = new JLabel("Учет расхода корма");
+    JLabel l = new JLabel("РЈС‡РµС‚ СЂР°СЃС…РѕРґР° РєРѕСЂРјР°");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(font);
 	f.getContentPane().add(l);
@@ -55,7 +55,7 @@ public class Rashod {
             dbm.setDataSource(rs);
             
             
-            l1 = new JLabel("Дата:");
+            l1 = new JLabel("Р”Р°С‚Р°:");
     		l1.setBounds(65, 40, 200, 20);
     		l1.setFont(font);
     		f.getContentPane().add(l1);
@@ -64,7 +64,7 @@ public class Rashod {
     		text.setBounds(65, 60, 160, 20);
     		f.getContentPane().add(text);
     	  
-    		l2 = new JLabel("Объём:"); 
+    		l2 = new JLabel("РћР±СЉС‘Рј:"); 
     		l2.setBounds(65, 90, 300, 25);
     		l2.setFont(font);
     		f.getContentPane().add(l2);
@@ -73,7 +73,7 @@ public class Rashod {
     	    text1.setBounds(65, 120, 160, 20);
     	    f.getContentPane().add(text1);
     	    
-    	    l3 = new JLabel("кг"); 
+    	    l3 = new JLabel("РєРі"); 
     		l3.setBounds(65, 150, 150, 25);
     		l3.setFont(font);
     		f.getContentPane().add(l3);
@@ -102,7 +102,7 @@ public class Rashod {
                 }
             });
     		
-            JButton b = new JButton("Добавить");
+            JButton b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
             b.setFont(font);
             b.addActionListener((ActionEvent evt) -> {
                 
@@ -114,13 +114,13 @@ public class Rashod {
                     ResultSet rs1 = st.executeQuery("SELECT * FROM `"+name_table+"`");
                     dbm.setDataSource(rs1);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             });
             f.getContentPane().add(b); 
             
             
-            JButton b1 = new JButton("Удалить");
+            JButton b1 = new JButton("РЈРґР°Р»РёС‚СЊ");
             b1.setFont(font);
             b1.addActionListener((ActionEvent evt) -> {
                 int row = table.getSelectedRow();
@@ -138,14 +138,14 @@ public class Rashod {
                     ResultSet rs1 = st.executeQuery("SELECT * FROM `"+name_table+"`");
                     dbm.setDataSource(rs1);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             });
             f.getContentPane().add(b1); 
             
             
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }
         
         f.setResizable(false);

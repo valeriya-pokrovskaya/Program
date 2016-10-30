@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 
 import javax.swing.*;
@@ -24,12 +24,12 @@ public class SpravAdres {
     String name_table= login + "_adres";	
     DefaultTableModel dm = new DefaultTableModel(); 
 
-	JFrame f = new JFrame("Справочник адресов");
+	JFrame f = new JFrame("РЎРїСЂР°РІРѕС‡РЅРёРє Р°РґСЂРµСЃРѕРІ");
 	f.setSize(380, 460);
     f.setLocationRelativeTo(null);
     f.getContentPane().setLayout(new FlowLayout());
     Font font = new Font("Segoe Script",  Font.BOLD,  12);
-    JLabel l = new JLabel("Справочник адресов");
+    JLabel l = new JLabel("РЎРїСЂР°РІРѕС‡РЅРёРє Р°РґСЂРµСЃРѕРІ");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(font);
 	f.getContentPane().add(l);
@@ -55,7 +55,7 @@ public class SpravAdres {
             dbm.setDataSource(rs);
             
             
-    		l1 = new JLabel("Название:"); 
+    		l1 = new JLabel("РќР°Р·РІР°РЅРёРµ:"); 
     		l1.setBounds(65, 90, 400, 25);
     		l1.setFont(font);
     		f.getContentPane().add(l1);
@@ -65,7 +65,7 @@ public class SpravAdres {
     	    f.getContentPane().add(text);
     	    
     		
-            JButton b = new JButton("Добавить");
+            JButton b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
             b.setFont(font);
             b.addActionListener((ActionEvent evt) -> {
                 
@@ -76,13 +76,13 @@ public class SpravAdres {
                     ResultSet rs1 = st.executeQuery("SELECT * FROM `"+name_table+"`");
                     dbm.setDataSource(rs1);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             });
             f.getContentPane().add(b); 
             
             
-            JButton b1 = new JButton("Удалить");
+            JButton b1 = new JButton("РЈРґР°Р»РёС‚СЊ");
             b1.setFont(font);
             b1.addActionListener((ActionEvent evt) -> {
                 int row = table.getSelectedRow();
@@ -100,13 +100,13 @@ public class SpravAdres {
                     ResultSet rs1 = st.executeQuery("SELECT * FROM `"+name_table+"`");
                     dbm.setDataSource(rs1);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             });
             f.getContentPane().add(b1); 
             
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }
         
         f.setResizable(false);

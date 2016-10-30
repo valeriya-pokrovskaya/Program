@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 
 import javax.swing.*;
@@ -21,13 +21,13 @@ public class SpravVakcin {
     	
     DefaultTableModel dm = new DefaultTableModel(); 
     String name_table= login + "_priv";	
-	JFrame f = new JFrame("Справочник прививок");
+	JFrame f = new JFrame("РЎРїСЂР°РІРѕС‡РЅРёРє РїСЂРёРІРёРІРѕРє");
 	f.setSize(350, 440);
     f.setLocationRelativeTo(null);
     f.getContentPane().setLayout(new FlowLayout());
     Font font = new Font("Segoe Script",  Font.BOLD,  12);
     Font fo = new Font("Segoe Script",  Font.BOLD,  14);
-    JLabel l = new JLabel("Справочник прививок");
+    JLabel l = new JLabel("РЎРїСЂР°РІРѕС‡РЅРёРє РїСЂРёРІРёРІРѕРє");
 	l.setBounds(90, 10, 50, 10);
 	l.setFont(fo);
 	f.getContentPane().add(l);
@@ -53,7 +53,7 @@ public class SpravVakcin {
             f.getContentPane().add(sc);
             dbm.setDataSource(rs);
             
-            JButton b = new JButton("Добавить запись");
+            JButton b = new JButton("Р”РѕР±Р°РІРёС‚СЊ Р·Р°РїРёСЃСЊ");
             b.setFont(font);
             b.addActionListener((ActionEvent evt) -> {
                 new Add_vakcin(login);
@@ -61,7 +61,7 @@ public class SpravVakcin {
             });
             f.getContentPane().add(b); 
             
-            JButton b1 = new JButton("Удалить запись");
+            JButton b1 = new JButton("РЈРґР°Р»РёС‚СЊ Р·Р°РїРёСЃСЊ");
             b1.setFont(font);
             b1.addActionListener((ActionEvent evt) -> {
                 int row = table.getSelectedRow();
@@ -79,13 +79,13 @@ public class SpravVakcin {
                     ResultSet rs1 = st.executeQuery("SELECT * FROM `"+name_table+"`");
                     dbm.setDataSource(rs1);
                 } catch (Exception ex) {
-                    JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                 }
             });
             f.getContentPane().add(b1); 
             
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }
         
         f.setResizable(false);
