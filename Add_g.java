@@ -23,7 +23,7 @@ public class Add_g extends JFrame{
 	String name_m="", name_p="", name_mb="", name_md="", name_pb="", name_pd="", n="";
 	
 	public Add_g(){
-		JFrame f = new JFrame("Добавление нового кролика женского пола");
+		JFrame f = new JFrame("Р”РѕР±Р°РІР»РµРЅРёРµ СЃР°РјРєРё");
 		JTabbedPane jtp = new JTabbedPane();
 		f.getContentPane().add(jtp);
 		
@@ -38,18 +38,18 @@ public class Add_g extends JFrame{
 		a1 = m1.getAdres();
 		int count1 = m1.getCount();
 		
-   //вкладка Основная информация
+   //РІРєР»Р°РґРєР° РћСЃРЅРѕРІРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ
 		
         JPanel p = new JPanel();
         p.setLayout(null);
         
-        l = new JLabel("Главная информация:");
+        l = new JLabel("Р“Р»Р°РІРЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ:");
 		l.setBounds(10, 10, 160, 20);
 		l.setFont(font);
 		l.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 		p.add(l);
         
-        l1 = new JLabel("Идент. номер: *");
+        l1 = new JLabel("РРґРµРЅС‚. РЅРѕРјРµСЂ: *");
 		l1.setBounds(10, 35, 200, 20);
 		l1.setFont(font);
 		p.add(l1);
@@ -58,7 +58,7 @@ public class Add_g extends JFrame{
 		text.setBounds(10, 60, 160, 20);
 		p.add(text);
 		
-		l2 = new JLabel("Кличка:");
+		l2 = new JLabel("РљР»РёС‡РєР°:");
 		l2.setBounds(190, 35, 200, 20);
 		l2.setFont(font);
 		p.add(l2);
@@ -67,7 +67,7 @@ public class Add_g extends JFrame{
 		text1.setBounds(190, 60, 160, 20);
 		p.add(text1);
 		
-		l3 = new JLabel("Дата рождения:");
+		l3 = new JLabel("Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ:");
 		l3.setBounds(370, 35, 200, 20);
 		l3.setFont(font);
 		p.add(l3);
@@ -76,7 +76,7 @@ public class Add_g extends JFrame{
 		text2.setBounds(370, 60, 160, 20);
 		p.add(text2);
 		
-		l4 = new JLabel("Возраст:");
+		l4 = new JLabel("Р’РѕР·СЂР°СЃС‚:");
 		l4.setBounds(10, 85, 200, 20);
 		l4.setFont(font);
 		p.add(l4);
@@ -85,7 +85,7 @@ public class Add_g extends JFrame{
 		text3.setBounds(10, 110, 160, 20);
 		p.add(text3);
 		
-		l5 = new JLabel("Порода:");
+		l5 = new JLabel("РџРѕСЂРѕРґР°:");
 		l5.setBounds(190, 85, 200, 20);
 		l5.setFont(font);
 		p.add(l5);
@@ -97,7 +97,7 @@ public class Add_g extends JFrame{
 		}
 		p.add(ch);
 		
-		l6 = new JLabel("Расположение:");
+		l6 = new JLabel("Р Р°СЃРїРѕР»РѕР¶РµРЅРёРµ:");
 		l6.setBounds(370, 85, 200, 20);
 		l6.setFont(font);
 		p.add(l6);
@@ -109,13 +109,13 @@ public class Add_g extends JFrame{
 		}
 		p.add(ch1);
 		
-		l8 = new JLabel("Соседство и гены:");
+		l8 = new JLabel("РЎРѕСЃРµРґСЃС‚РІРѕ Рё РіРµРЅС‹:");
 		l8.setBounds(10, 145, 160, 20);
 		l8.setFont(font);
 		l8.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 		p.add(l8);
 		
-		l7 = new JLabel("Кол-во соседий:");
+		l7 = new JLabel("РљРѕР»-РІРѕ СЃРѕСЃРµРґРёР№:");
 		l7.setBounds(10, 170, 200, 20);
 		l7.setFont(font);
 		p.add(l7);
@@ -124,7 +124,7 @@ public class Add_g extends JFrame{
 		text4.setBounds(10, 195, 160, 20);
 		p.add(text4);
 		
-		l8 = new JLabel("Кол-во родящихся:");
+		l8 = new JLabel("РљРѕР»-РІРѕ СЂРѕРґСЏС‰РёС…СЃСЏ:");
 		l8.setBounds(190, 170, 200, 20);
 		l8.setFont(font);
 		p.add(l8);
@@ -133,26 +133,26 @@ public class Add_g extends JFrame{
 		text5.setBounds(190, 195, 160, 20);
 		p.add(text5);
 		
-		l9 = new JLabel("Пометки:");
+		l9 = new JLabel("РџРѕРјРµС‚РєРё:");
 		l9.setBounds(10, 230, 160, 20);
 		l9.setFont(font);
 		l9.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 		p.add(l9);
 		
-		cb1 = new Checkbox("Инбридинг"); 
+		cb1 = new Checkbox("РРЅР±СЂРёРґРёРЅРі"); 
 	    cb1.setBounds(10, 260, 160, 30); 
 	    cb1.setFont(font);
 	    p.add(cb1); 
-	    cb2 = new Checkbox("Готовая продукция"); 
+	    cb2 = new Checkbox("Р“РѕС‚РѕРІР°СЏ РїСЂРѕРґСѓРєС†РёСЏ"); 
 	    cb2.setBounds(190, 260, 160, 30); 
 	    cb2.setFont(font);
 	    p.add(cb2); 
-	    cb3 = new Checkbox("Готов к реализации"); 
+	    cb3 = new Checkbox("Р“РѕС‚РѕРІ Рє СЂРµР°Р»РёР·Р°С†РёРё"); 
 	    cb3.setBounds(370, 260, 160, 30);
 	    cb3.setFont(font);
 	    p.add(cb3);
 	    
-	    b = new JButton("Добавить");
+	    b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
 	    b.setBounds(120, 330, 160, 30);
 	    b.setVisible(false);
 	    b.setFont(font);
@@ -201,9 +201,9 @@ public class Add_g extends JFrame{
                 kol2 = text5.getText();
                 text12.setText(number);
 
-                if (cb1.getState()==true){ i="И";}
-                if (cb2.getState()==true){ i1="ГП";}
-                if (cb3.getState()==true){ i2="ГкР";}
+                if (cb1.getState()==true){ i="Р";}
+                if (cb2.getState()==true){ i1="Р“Рџ";}
+                if (cb3.getState()==true){ i2="Р“РєР ";}
                 if (i==""){ info =  i1 + "," + i2; System.out.println(info);}
                 else if(i1==""){info =  i + "," + i2; System.out.println(info);}
                 else if(i2==""){ info =  i + "," + i1; System.out.println(info);}
@@ -221,7 +221,7 @@ public class Add_g extends JFrame{
             }
         });
 	    
-	    b1 = new JButton("Выйти");
+	    b1 = new JButton("Р’С‹Р№С‚Рё");
 	    b1.setBounds(300, 330, 160, 30);
 	    b1.setVisible(true);
 	    b1.setFont(font);
@@ -233,20 +233,20 @@ public class Add_g extends JFrame{
             }
             
         });
-        jtp.addTab("Основное", p);
+        jtp.addTab("РћСЃРЅРѕРІРЅРѕРµ", p);
         
-      //вкладка Родовод      
+      //РІРєР»Р°РґРєР° Р РѕРґРѕРІРѕРґ     
         
         JPanel p1 = new JPanel();
         p1.setLayout(null);
         
-        l10 = new JLabel("Информация о родственниках:");
+        l10 = new JLabel("РРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЂРѕРґСЃС‚РІРµРЅРЅРёРєР°С…:");
 		l10.setBounds(10, 10, 270, 20);
 		l10.setFont(font1);
 		l10.setBorder(BorderFactory.createBevelBorder(BevelBorder.LOWERED));
 		p1.add(l10);
 		
-		l11 = new JLabel("Кличка матери:");
+		l11 = new JLabel("РљР»РёС‡РєР° РјР°С‚РµСЂРё:");
 		l11.setBounds(10, 45, 200, 20);
 		l11.setFont(font);
 		p1.add(l11);
@@ -255,7 +255,7 @@ public class Add_g extends JFrame{
 		text6.setBounds(10, 70, 160, 20);
 		p1.add(text6);
 		
-		l12 = new JLabel("Кличка бабушки(мать):");
+		l12 = new JLabel("РљР»РёС‡РєР° Р±Р°Р±СѓС€РєРё(РјР°С‚СЊ):");
 		l12.setBounds(190, 45, 200, 20);
 		l12.setFont(font);
 		p1.add(l12);
@@ -264,7 +264,7 @@ public class Add_g extends JFrame{
 		text7.setBounds(190, 70, 160, 20);
 		p1.add(text7);
 		
-		l13 = new JLabel("Кличка дедушки(мать):");
+		l13 = new JLabel("РљР»РёС‡РєР° РґРµРґСѓС€РєРё(РјР°С‚СЊ):");
 		l13.setBounds(370, 45, 200, 20);
 		l13.setFont(font);
 		p1.add(l13);
@@ -273,7 +273,7 @@ public class Add_g extends JFrame{
 		text8.setBounds(370, 70, 160, 20);
 		p1.add(text8);
         
-		l14 = new JLabel("Кличка отца:");
+		l14 = new JLabel("РљР»РёС‡РєР° РѕС‚С†Р°:");
 		l14.setBounds(10, 110, 200, 20);
 		l14.setFont(font);
 		p1.add(l14);
@@ -282,7 +282,7 @@ public class Add_g extends JFrame{
 		text9.setBounds(10, 135, 160, 20);
 		p1.add(text9);
 		
-		l15 = new JLabel("Кличка бабушки(отец):");
+		l15 = new JLabel("РљР»РёС‡РєР° Р±Р°Р±СѓС€РєРё(РѕС‚РµС†):");
 		l15.setBounds(190, 110, 200, 20);
 		l15.setFont(font);
 		p1.add(l15);
@@ -291,7 +291,7 @@ public class Add_g extends JFrame{
 		text10.setBounds(190, 135, 160, 20);
 		p1.add(text10);
 		
-		l16 = new JLabel("Кличка дедушки(отец):");
+		l16 = new JLabel("РљР»РёС‡РєР° РґРµРґСѓС€РєРё(РѕС‚РµС†):");
 		l16.setBounds(370, 110, 200, 20);
 		l16.setFont(font);
 		p1.add(l16);
@@ -305,7 +305,7 @@ public class Add_g extends JFrame{
 		text12.setVisible(false);
 		p1.add(text12);
 		
-		b2 = new JButton("Добавить");
+		b2 = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
 	    b2.setBounds(220, 330, 160, 30);
 	    b2.setVisible(true);
 	    b2.setFont(font);
@@ -326,7 +326,7 @@ public class Add_g extends JFrame{
             
         });
 		
-        jtp.addTab("Родовод", p1);
+        jtp.addTab("Р РѕРґРѕРІРѕРґ", p1);
         jtp.setEnabledAt(1, false);
         
         f.setSize(600, 450);
