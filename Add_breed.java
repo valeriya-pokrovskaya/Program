@@ -22,7 +22,7 @@ public class Add_breed extends JFrame{
 	
 	Add_breed(String login){
 		
-		super("Добавление новой породы");
+		super("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ РїРѕСЂРѕРґС‹");
 		setSize(305, 300);
 	    setLocationRelativeTo(null);
 	    setVisible(true);
@@ -32,12 +32,12 @@ public class Add_breed extends JFrame{
 	    p = new JPanel();
 	    p.setLayout(null);
 	     
-	    l = new JLabel("Добавление новой породы");
+	    l = new JLabel("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ РїРѕСЂРѕРґС‹");
 		l.setBounds(40, 10, 350, 20);
 		l.setFont(f1);
 		p.add(l);
 	    
-		l1 = new JLabel("Название породы");
+		l1 = new JLabel("РќР°Р·РІР°РЅРёРµ РїРѕСЂРѕРґС‹");
 		l1.setBounds(65, 40, 200, 20);
 		l1.setFont(f);
 		p.add(l1);
@@ -46,7 +46,7 @@ public class Add_breed extends JFrame{
 		text.setBounds(65, 60, 160, 20);
 	    p.add(text);
 	  
-		l2 = new JLabel("Сокращение породы"); 
+		l2 = new JLabel("РЎРѕРєСЂР°С‰РµРЅРёРµ РїРѕСЂРѕРґС‹"); 
 		l2.setBounds(65, 90, 300, 25);
 		l2.setFont(f);
 		p.add(l2);
@@ -55,7 +55,7 @@ public class Add_breed extends JFrame{
 	    text1.setBounds(65, 120, 160, 20);
 	    p.add(text1);
 	    
-	    l3 = new JLabel("Цвет"); 
+	    l3 = new JLabel("Р¦РІРµС‚"); 
 		l3.setBounds(65, 150, 150, 25);
 		l3.setFont(f);
 		p.add(l3);
@@ -64,7 +64,7 @@ public class Add_breed extends JFrame{
 	    text2.setBounds(65, 180, 160, 20);
 	    p.add(text2);
 	    
-	    b = new JButton("Добавить");
+	    b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
 	    b.setBounds(10, 220, 130, 20);
 	    b.setVisible(true);
 	    b.setFont(f);
@@ -83,7 +83,7 @@ public class Add_breed extends JFrame{
             
         });
 	    
-	    b1 = new JButton("Выйти");
+	    b1 = new JButton("Р’С‹Р№С‚Рё");
 	    b1.setBounds(150, 220, 130, 20);
 	    b1.setVisible(true);
 	    b1.setFont(f);
