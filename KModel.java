@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,21 +20,21 @@ public class KModel extends AbstractTableModel
 	public static Connection conn;
 	public String tableName;
     public ResultSetMetaData metaData = null;
-	// здесь названия столбцов
+	// Р·РґРµСЃСЊ РЅР°Р·РІР°РЅРёСЏ СЃС‚РѕР»Р±С†РѕРІ
     public ArrayList columnNames = new ArrayList();
-    // список типов столбцов
+    // СЃРїРёСЃРѕРє С‚РёРїРѕРІ СЃС‚РѕР»Р±С†РѕРІ
     public ArrayList columnTypes = new ArrayList();
-    // хранилище для полученных данных из базы данных
+    // С…СЂР°РЅРёР»РёС‰Рµ РґР»СЏ РїРѕР»СѓС‡РµРЅРЅС‹С… РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С…
     public ArrayList data = new ArrayList();
     String login = (new avtorizaciya()).getLogin();
     String name_table = login+"_m";
-    // конструктор позволяет задать возможность редактирования
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕР·РІРѕР»СЏРµС‚ Р·Р°РґР°С‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
     public KModel(boolean editable) {
         this.editable = editable;
     }
     private boolean editable;
 
-    // количество строк
+    // РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє
     @Override
     public int getRowCount() {
         synchronized (data) {
@@ -42,36 +42,36 @@ public class KModel extends AbstractTableModel
         }
     }    
     
-    // возможность редактирования
+    // РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёСЏ
     @Override
     public boolean isCellEditable(int row, int column) {
     	if(column==0){return false;}
     	else{return true;}
         
     }
-    // количество столбцов
+    // РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ
     @Override
     public int getColumnCount() {
         return columnNames.size();
     }
-    // тип данных столбца
+    // С‚РёРї РґР°РЅРЅС‹С… СЃС‚РѕР»Р±С†Р°
 
     @Override
     public Class getColumnClass(int column) {
         return (Class) columnTypes.get(column);
     }
-    // название столбца
+    // РЅР°Р·РІР°РЅРёРµ СЃС‚РѕР»Р±С†Р°
 
     @Override
     public String getColumnName(int column) {
     	switch(column){
     	case(0):
-    		return "№";
+    		return "в„–";
     	default:
             return (String) columnNames.get(column);
     	}
     }
-    // данные в ячейке
+    // РґР°РЅРЅС‹Рµ РІ СЏС‡РµР№РєРµ
 
     @Override
     public Object getValueAt(int row, int column) {
@@ -80,7 +80,7 @@ public class KModel extends AbstractTableModel
         }
     }
 
-    // замена значения ячейки
+    // Р·Р°РјРµРЅР° Р·РЅР°С‡РµРЅРёСЏ СЏС‡РµР№РєРё
     
     public void getValueAt( Object value, int row, int column) {
         synchronized (data) {
@@ -92,28 +92,28 @@ public class KModel extends AbstractTableModel
         data.remove(rowIndex);
         fireTableRowsDeleted(rowIndex, rowIndex);
     }
-    // получение данных из объекта ResultSet
+    // РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РёР· РѕР±СЉРµРєС‚Р° ResultSet
 
     public void setDataSource(ResultSet rs) throws Exception {
-        // удаляем прежние данные
+        // СѓРґР°Р»СЏРµРј РїСЂРµР¶РЅРёРµ РґР°РЅРЅС‹Рµ
         data.clear();
         columnNames.clear();
         columnTypes.clear();
-        // получаем вспомогательную информацию о столбцах
+        // РїРѕР»СѓС‡Р°РµРј РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃС‚РѕР»Р±С†Р°С…
         ResultSetMetaData rsmd = rs.getMetaData();
         int columnCount = rsmd.getColumnCount();
         for (int i = 0; i < columnCount; i++) {
-            // название столбца
+            // РЅР°Р·РІР°РЅРёРµ СЃС‚РѕР»Р±С†Р°
             columnNames.add(rsmd.getColumnName(i + 1));
-            // тип столбца
+            // С‚РёРї СЃС‚РѕР»Р±С†Р°
             Class type= Class.forName(rsmd.getColumnClassName(i + 1));
             columnTypes.add(type);
         }
-        // сообщаем об изменениях в структуре данных
+        // СЃРѕРѕР±С‰Р°РµРј РѕР± РёР·РјРµРЅРµРЅРёСЏС… РІ СЃС‚СЂСѓРєС‚СѓСЂРµ РґР°РЅРЅС‹С…
         fireTableStructureChanged();
-        // получаем данные
+        // РїРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ
         while (rs.next()) {
-            // здесь будем хранить ячейки одной строки
+            // Р·РґРµСЃСЊ Р±СѓРґРµРј С…СЂР°РЅРёС‚СЊ СЏС‡РµР№РєРё РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё
             ArrayList row = new ArrayList();
             for (int i = 0; i < columnCount; i++) {
                 if (columnTypes.get(i) == String.class) {
@@ -124,7 +124,7 @@ public class KModel extends AbstractTableModel
             }
             synchronized (data) {
                 data.add(row);
-                // сообщаем о прибавлении строки
+                // СЃРѕРѕР±С‰Р°РµРј Рѕ РїСЂРёР±Р°РІР»РµРЅРёРё СЃС‚СЂРѕРєРё
                 fireTableRowsInserted(
                         data.size() - 1, data.size() - 1);
 
@@ -217,7 +217,7 @@ public class KModel extends AbstractTableModel
     	
     	try {
     		int id = count + 1;
-    		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id` ,`Идент. номер` ,`Кличка`, `Дата рождения`,`Возраст`,`Порода`,`Вес`,`Пометки`,`Расположение`,`Кол-во соседей`, `Кол-во родившихся`) VALUES ('"+id+"', '"+number+"', '"+name+"', '"+data+"', '"+age+"', '"+breed+"', '', '"+info+"', '"+location+"', '"+kol1+"', '"+kol2+"');";
+    		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id` ,`РРґРµРЅС‚. РЅРѕРјРµСЂ` ,`РљР»РёС‡РєР°`, `Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ`,`Р’РѕР·СЂР°СЃС‚`,`РџРѕСЂРѕРґР°`,`Р’РµСЃ`,`РџРѕРјРµС‚РєРё`,`Р Р°СЃРїРѕР»РѕР¶РµРЅРёРµ`,`РљРѕР»-РІРѕ СЃРѕСЃРµРґРµР№`, `РљРѕР»-РІРѕ СЂРѕРґРёРІС€РёС…СЃСЏ`) VALUES ('"+id+"', '"+number+"', '"+name+"', '"+data+"', '"+age+"', '"+breed+"', '', '"+info+"', '"+location+"', '"+kol1+"', '"+kol2+"');";
             System.out.println(id);
             connect().executeUpdate(query);
         } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -230,7 +230,7 @@ public class KModel extends AbstractTableModel
 	   
 	   try{
    		String query =
-   				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Кличка матери` VARCHAR(255) NOT NULL , `Кличка бабушки(мать)` VARCHAR(255) NOT NULL , `Кличка дедушки(мать)` VARCHAR(255) NOT NULL,  `Кличка отца` VARCHAR(255) NOT NULL , `Кличка бабушки(отец)` VARCHAR(255) NOT NULL , `Кличка дедушки(отец)` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+   				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РљР»РёС‡РєР° РјР°С‚РµСЂРё` VARCHAR(255) NOT NULL , `РљР»РёС‡РєР° Р±Р°Р±СѓС€РєРё(РјР°С‚СЊ)` VARCHAR(255) NOT NULL , `РљР»РёС‡РєР° РґРµРґСѓС€РєРё(РјР°С‚СЊ)` VARCHAR(255) NOT NULL,  `РљР»РёС‡РєР° РѕС‚С†Р°` VARCHAR(255) NOT NULL , `РљР»РёС‡РєР° Р±Р°Р±СѓС€РєРё(РѕС‚РµС†)` VARCHAR(255) NOT NULL , `РљР»РёС‡РєР° РґРµРґСѓС€РєРё(РѕС‚РµС†)` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
    		connect().executeUpdate(query);
    		System.out.println("Table creation process successfully!");
 	   } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -245,7 +245,7 @@ public void create_table_w(String number){
 	   
 	   try{
    		String query =
-   				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Дата` VARCHAR(255) NOT NULL , `Вес(граммы)` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+   				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Р”Р°С‚Р°` VARCHAR(255) NOT NULL , `Р’РµСЃ(РіСЂР°РјРјС‹)` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
    		connect().executeUpdate(query);
    		System.out.println("Table creation process successfully!");
 	   } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -260,7 +260,7 @@ public void create_table_w(String number){
 	   
 	   try{
 		String query =
-				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Дата проведения` VARCHAR(255) NOT NULL , `Название` VARCHAR(255) NOT NULL , `Срок действия` VARCHAR(255) NOT NULL,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Р”Р°С‚Р° РїСЂРѕРІРµРґРµРЅРёСЏ` VARCHAR(255) NOT NULL , `РќР°Р·РІР°РЅРёРµ` VARCHAR(255) NOT NULL , `РЎСЂРѕРє РґРµР№СЃС‚РІРёСЏ` VARCHAR(255) NOT NULL,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
 		connect().executeUpdate(query);
 		System.out.println("Table creation process successfully!");
 	   } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -283,7 +283,7 @@ public void create_table_w(String number){
    	
    	try {
    		int id = count + 1;
-   		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id`, `Кличка матери`, `Кличка бабушки(мать)`, `Кличка дедушки(мать)`,  `Кличка отца`, `Кличка бабушки(отец)`, `Кличка дедушки(отец)`) VALUES ('"+id+"', '"+name_m+"', '"+name_mb+"', '"+name_md+"', '"+name_p+"', '"+name_pb+"', '"+name_pd+"');";
+   		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id`, `РљР»РёС‡РєР° РјР°С‚РµСЂРё`, `РљР»РёС‡РєР° Р±Р°Р±СѓС€РєРё(РјР°С‚СЊ)`, `РљР»РёС‡РєР° РґРµРґСѓС€РєРё(РјР°С‚СЊ)`,  `РљР»РёС‡РєР° РѕС‚С†Р°`, `РљР»РёС‡РєР° Р±Р°Р±СѓС€РєРё(РѕС‚РµС†)`, `РљР»РёС‡РєР° РґРµРґСѓС€РєРё(РѕС‚РµС†)`) VALUES ('"+id+"', '"+name_m+"', '"+name_mb+"', '"+name_md+"', '"+name_p+"', '"+name_pb+"', '"+name_pd+"');";
            System.out.println(id);
            connect().executeUpdate(query);
        } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -309,7 +309,7 @@ public void create_table_w(String number){
        	
         	 ArrayList<String> a1 = new ArrayList<String>();
         	try {
-        		String query1 = "select `Кличка` from `gb_x_lera99`.`"+name_table+"`";
+        		String query1 = "select `РљР»РёС‡РєР°` from `gb_x_lera99`.`"+name_table+"`";
         		ResultSet rs1 = connect().executeQuery(query1);
         		while (rs1.next()) {
                     	a1.add(rs1.getString(1));

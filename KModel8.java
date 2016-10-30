@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -20,21 +20,21 @@ public class KModel8 extends AbstractTableModel
 	public static Connection conn;
 	public String tableName;
     public ResultSetMetaData metaData = null;
-	// здесь названия столбцов
+	// Р·РґРµСЃСЊ РЅР°Р·РІР°РЅРёВ¤ СЃС‚РѕР»Р±С†РѕРІ
     public ArrayList columnNames = new ArrayList();
-    // список типов столбцов
+    // СЃРїРёСЃРѕРє С‚РёРїРѕРІ СЃС‚РѕР»Р±С†РѕРІ
     public ArrayList columnTypes = new ArrayList();
-    // хранилище для полученных данных из базы данных
+    // С…СЂР°РЅРёР»РёС‰Рµ РґР»В¤ РїРѕР»СѓС‡РµРЅРЅС‹С… РґР°РЅРЅС‹С… РёР· Р±Р°Р·С‹ РґР°РЅРЅС‹С…
     public ArrayList data = new ArrayList();
     String login = (new avtorizaciya()).getLogin();
     String name_table = login+"_adres";
-    // конструктор позволяет задать возможность редактирования
+    // РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕР·РІРѕР»В¤РµС‚ Р·Р°РґР°С‚СЊ РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёВ¤
     public KModel8(boolean editable) {
         this.editable = editable;
     }
     private boolean editable;
 
-    // количество строк
+    // РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє
     @Override
     public int getRowCount() {
         synchronized (data) {
@@ -42,7 +42,7 @@ public class KModel8 extends AbstractTableModel
         }
     }
     
-    // возможность редактирования
+    // РІРѕР·РјРѕР¶РЅРѕСЃС‚СЊ СЂРµРґР°РєС‚РёСЂРѕРІР°РЅРёВ¤
     @Override
     public boolean isCellEditable(int row, int column) {
     	if(column==0){return false;}
@@ -50,29 +50,29 @@ public class KModel8 extends AbstractTableModel
         
     }
     
-    // количество столбцов
+    // РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ
     @Override
     public int getColumnCount() {
         return columnNames.size();
     }
-    // тип данных столбца
+    // С‚РёРї РґР°РЅРЅС‹С… СЃС‚РѕР»Р±С†Р°
 
     @Override
     public Class getColumnClass(int column) {
         return (Class) columnTypes.get(column);
     }
-    // название столбца
+    // РЅР°Р·РІР°РЅРёРµ СЃС‚РѕР»Р±С†Р°
 
     @Override
     public String getColumnName(int column) {
     	switch(column){
     	case(0):
-    		return "№";
+    		return "С”";
     	default:
             return (String) columnNames.get(column);
     	}
     }
-    // данные в ячейке
+    // РґР°РЅРЅС‹Рµ РІ В¤С‡РµР№РєРµ
 
     @Override
     public Object getValueAt(int row, int column) {
@@ -81,7 +81,7 @@ public class KModel8 extends AbstractTableModel
         }
     }
 
-    // замена значения ячейки
+    // Р·Р°РјРµРЅР° Р·РЅР°С‡РµРЅРёВ¤ В¤С‡РµР№РєРё
     
     public void getValueAt( Object value, int row, int column) {
         synchronized (data) {
@@ -93,28 +93,28 @@ public class KModel8 extends AbstractTableModel
         data.remove(rowIndex);
         fireTableRowsDeleted(rowIndex, rowIndex);
     }
-    // получение данных из объекта ResultSet
+    // РїРѕР»СѓС‡РµРЅРёРµ РґР°РЅРЅС‹С… РёР· РѕР±СЉРµРєС‚Р° ResultSet
 
     public void setDataSource(ResultSet rs) throws Exception {
-        // удаляем прежние данные
+        // СѓРґР°Р»В¤РµРј РїСЂРµР¶РЅРёРµ РґР°РЅРЅС‹Рµ
         data.clear();
         columnNames.clear();
         columnTypes.clear();
-        // получаем вспомогательную информацию о столбцах
+        // РїРѕР»СѓС‡Р°РµРј РІСЃРїРѕРјРѕРіР°С‚РµР»СЊРЅСѓСЋ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃС‚РѕР»Р±С†Р°С…
         ResultSetMetaData rsmd = rs.getMetaData();
         int columnCount = rsmd.getColumnCount();
         for (int i = 0; i < columnCount; i++) {
-            // название столбца
+            // РЅР°Р·РІР°РЅРёРµ СЃС‚РѕР»Р±С†Р°
             columnNames.add(rsmd.getColumnName(i + 1));
-            // тип столбца
+            // С‚РёРї СЃС‚РѕР»Р±С†Р°
             Class type= Class.forName(rsmd.getColumnClassName(i + 1));
             columnTypes.add(type);
         }
-        // сообщаем об изменениях в структуре данных
+        // СЃРѕРѕР±С‰Р°РµРј РѕР± РёР·РјРµРЅРµРЅРёВ¤С… РІ СЃС‚СЂСѓРєС‚СѓСЂРµ РґР°РЅРЅС‹С…
         fireTableStructureChanged();
-        // получаем данные
+        // РїРѕР»СѓС‡Р°РµРј РґР°РЅРЅС‹Рµ
         while (rs.next()) {
-            // здесь будем хранить ячейки одной строки
+            // Р·РґРµСЃСЊ Р±СѓРґРµРј С…СЂР°РЅРёС‚СЊ В¤С‡РµР№РєРё РѕРґРЅРѕР№ СЃС‚СЂРѕРєРё
             ArrayList row = new ArrayList();
             for (int i = 0; i < columnCount; i++) {
                 if (columnTypes.get(i) == String.class) {
@@ -125,7 +125,7 @@ public class KModel8 extends AbstractTableModel
             }
             synchronized (data) {
                 data.add(row);
-                // сообщаем о прибавлении строки
+                // СЃРѕРѕР±С‰Р°РµРј Рѕ РїСЂРёР±Р°РІР»РµРЅРёРё СЃС‚СЂРѕРєРё
                 fireTableRowsInserted(
                         data.size() - 1, data.size() - 1);
 
@@ -220,7 +220,7 @@ public class KModel8 extends AbstractTableModel
     public void add(String name){
     	try {
     		int id = getCount() + 1;
-    		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id` ,`Название`) VALUES ('"+id+"',  '"+name+"');";
+    		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id` ,`РЊР°Р·РІР°РЅРёРµ`) VALUES ('"+id+"',  '"+name+"');";
             System.out.println(id);
             connect().executeUpdate(query);
         } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -232,7 +232,7 @@ public class KModel8 extends AbstractTableModel
     	
    	 ArrayList<String> a = new ArrayList<String>();
    	try {
-   		String query = "select `Название` from `gb_x_lera99`.`"+name_table+"`";
+   		String query = "select `РЊР°Р·РІР°РЅРёРµ` from `gb_x_lera99`.`"+name_table+"`";
    		ResultSet rs = connect().executeQuery(query);
    		while (rs.next()) {
                	a.add(rs.getString(1));

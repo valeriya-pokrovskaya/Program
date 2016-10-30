@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.sql.*;
 import java.util.Vector;
@@ -33,7 +33,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_m";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Идент. номер` VARCHAR(255) NOT NULL , `Кличка` VARCHAR(255) NOT NULL , `Дата рождения` VARCHAR(255) NOT NULL,  `Возраст` VARCHAR(255) NOT NULL , `Порода` VARCHAR(255) NOT NULL , `Вес` VARCHAR(255) NOT NULL , `Пометки` VARCHAR(255) NOT NULL , `Расположение` VARCHAR(255) NOT NULL ,  `Кол-во соседей` VARCHAR(255) NOT NULL , `Кол-во родившихся` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РРґРµРЅС‚. РЅРѕРјРµСЂ` VARCHAR(255) NOT NULL , `РљР»РёС‡РєР°` VARCHAR(255) NOT NULL , `Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ` VARCHAR(255) NOT NULL,  `Р’РѕР·СЂР°СЃС‚` VARCHAR(255) NOT NULL , `РџРѕСЂРѕРґР°` VARCHAR(255) NOT NULL , `Р’РµСЃ` VARCHAR(255) NOT NULL , `РџРѕРјРµС‚РєРё` VARCHAR(255) NOT NULL , `Р Р°СЃРїРѕР»РѕР¶РµРЅРёРµ` VARCHAR(255) NOT NULL ,  `РљРѕР»-РІРѕ СЃРѕСЃРµРґРµР№` VARCHAR(255) NOT NULL , `РљРѕР»-РІРѕ СЂРѕРґРёРІС€РёС…СЃСЏ` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -52,7 +52,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_g";
     		String table =
-    				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Идент. номер` VARCHAR(255) NOT NULL , `Кличка` VARCHAR(255) NOT NULL , `Дата рождения` VARCHAR(255) NOT NULL,  `Возраст` VARCHAR(255) NOT NULL , `Порода` VARCHAR(255) NOT NULL , `Вес` VARCHAR(255) NOT NULL , `Пометки` VARCHAR(255) NOT NULL , `Расположение` VARCHAR(255) NOT NULL ,  `Кол-во соседей` VARCHAR(255) NOT NULL , `Кол-во родившихся` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    				"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РРґРµРЅС‚. РЅРѕРјРµСЂ` VARCHAR(255) NOT NULL , `РљР»РёС‡РєР°` VARCHAR(255) NOT NULL , `Р”Р°С‚Р° СЂРѕР¶РґРµРЅРёСЏ` VARCHAR(255) NOT NULL,  `Р’РѕР·СЂР°СЃС‚` VARCHAR(255) NOT NULL , `РџРѕСЂРѕРґР°` VARCHAR(255) NOT NULL , `Р’РµСЃ` VARCHAR(255) NOT NULL , `РџРѕРјРµС‚РєРё` VARCHAR(255) NOT NULL , `Р Р°СЃРїРѕР»РѕР¶РµРЅРёРµ` VARCHAR(255) NOT NULL ,  `РљРѕР»-РІРѕ СЃРѕСЃРµРґРµР№` VARCHAR(255) NOT NULL , `РљРѕР»-РІРѕ СЂРѕРґРёРІС€РёС…СЃСЏ` VARCHAR(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -71,7 +71,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_priv";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Название` VARCHAR(255) NOT NULL , `Назначить с ... дней` INT(50) NOT NULL ,   `Срок действия(дней)` INT(50) NOT NULL ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РќР°Р·РІР°РЅРёРµ` VARCHAR(255) NOT NULL , `РќР°Р·РЅР°С‡РёС‚СЊ СЃ ... РґРЅРµР№` INT(50) NOT NULL ,   `РЎСЂРѕРє РґРµР№СЃС‚РІРёСЏ(РґРЅРµР№)` INT(50) NOT NULL ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -90,14 +90,14 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_porod";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Название` VARCHAR(255) NOT NULL , `Сокращение` VARCHAR(255) NOT NULL ,   `Цвет` VARCHAR(255) NOT NULL ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РќР°Р·РІР°РЅРёРµ` VARCHAR(255) NOT NULL , `РЎРѕРєСЂР°С‰РµРЅРёРµ` VARCHAR(255) NOT NULL ,   `Р¦РІРµС‚` VARCHAR(255) NOT NULL ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
     	    		"UPDATE  `gb_x_lera99`.`users` SET  `name_porod` =  '"+name_table+"' WHERE  `users`.`login` ='"+login+"';";
     	    		st.executeUpdate(query);
     	    String query1 =
-    	     	     "INSERT INTO `gb_x_lera99`.`"+name_table+"`(`id`, `Название`, `Сокращение`, `Цвет`) VALUES (1,'Гибрид','Гибрид','Серый'), (2,'Бабочка','ББ','Светло-розовый'), (3,'Серебристый','СрБ','Сиреневый'), (4,'Черно-Бурый','ЧрБ','Черный'),(5,'Советская Шиншила','СоШ','Бирюзовый'),(6,'Белая Чернова','БеЧ','Белый'),(7,'Бельгийский Фландр','БеФ','Белый'),(8,'Венский Голубой','ВеГ','Синий'),(9,'Калифорниискии Белый','БеВ','Светло-серый'),(10,'Серыи Великан','СрВ','Тускло-серый'),(11,'Гибрид Срб БеВ','Г2','Белый'),(12,'Гибрид СрВ Срб','Г3','Белый'),(13,'Гибрид БеВ КфБ','Г4','Белый'),(14,'Гибрид Кфб БеВ','Г5','Белый'),(15,'Гибрид СрВ БеВ.','Г6','Белый'),(16,'Белка','Бл','Белый'),(17,'Серо-серебристый','ССрб','Темно-серый'),(18,'Гибрид Срб СрВ','Г7','Белый'),(19,'Акселерат','АкС','Белый'),(20,'Белка-Сиам','Б-С','Белый'),(21,'Новозеландский Белый','НзБ','Белый'),(22,'Черепаховый','ЧрП','Темно-оранжевый');";
+    	     	     "INSERT INTO `gb_x_lera99`.`"+name_table+"`(`id`, `РќР°Р·РІР°РЅРёРµ`, `РЎРѕРєСЂР°С‰РµРЅРёРµ`, `Р¦РІРµС‚`) VALUES (1,'Р“РёР±СЂРёРґ','Р“РёР±СЂРёРґ','РЎРµСЂС‹Р№'), (2,'Р‘Р°Р±РѕС‡РєР°','Р‘Р‘','РЎРІРµС‚Р»Рѕ-СЂРѕР·РѕРІС‹Р№'), (3,'РЎРµСЂРµР±СЂРёСЃС‚С‹Р№','РЎСЂР‘','РЎРёСЂРµРЅРµРІС‹Р№'), (4,'Р§РµСЂРЅРѕ-Р‘СѓСЂС‹Р№','Р§СЂР‘','Р§РµСЂРЅС‹Р№'),(5,'РЎРѕРІРµС‚СЃРєР°СЏ РЁРёРЅС€РёР»Р°','РЎРѕРЁ','Р‘РёСЂСЋР·РѕРІС‹Р№'),(6,'Р‘РµР»Р°СЏ Р§РµСЂРЅРѕРІР°','Р‘РµР§','Р‘РµР»С‹Р№'),(7,'Р‘РµР»СЊРіРёР№СЃРєРёР№ Р¤Р»Р°РЅРґСЂ','Р‘РµР¤','Р‘РµР»С‹Р№'),(8,'Р’РµРЅСЃРєРёР№ Р“РѕР»СѓР±РѕР№','Р’РµР“','РЎРёРЅРёР№'),(9,'РљР°Р»РёС„РѕСЂРЅРёРёСЃРєРёРё Р‘РµР»С‹Р№','Р‘РµР’','РЎРІРµС‚Р»Рѕ-СЃРµСЂС‹Р№'),(10,'РЎРµСЂС‹Рё Р’РµР»РёРєР°РЅ','РЎСЂР’','РўСѓСЃРєР»Рѕ-СЃРµСЂС‹Р№'),(11,'Р“РёР±СЂРёРґ РЎСЂР± Р‘РµР’','Р“2','Р‘РµР»С‹Р№'),(12,'Р“РёР±СЂРёРґ РЎСЂР’ РЎСЂР±','Р“3','Р‘РµР»С‹Р№'),(13,'Р“РёР±СЂРёРґ Р‘РµР’ РљС„Р‘','Р“4','Р‘РµР»С‹Р№'),(14,'Р“РёР±СЂРёРґ РљС„Р± Р‘РµР’','Р“5','Р‘РµР»С‹Р№'),(15,'Р“РёР±СЂРёРґ РЎСЂР’ Р‘РµР’.','Р“6','Р‘РµР»С‹Р№'),(16,'Р‘РµР»РєР°','Р‘Р»','Р‘РµР»С‹Р№'),(17,'РЎРµСЂРѕ-СЃРµСЂРµР±СЂРёСЃС‚С‹Р№','РЎРЎСЂР±','РўРµРјРЅРѕ-СЃРµСЂС‹Р№'),(18,'Р“РёР±СЂРёРґ РЎСЂР± РЎСЂР’','Р“7','Р‘РµР»С‹Р№'),(19,'РђРєСЃРµР»РµСЂР°С‚','РђРєРЎ','Р‘РµР»С‹Р№'),(20,'Р‘РµР»РєР°-РЎРёР°Рј','Р‘-РЎ','Р‘РµР»С‹Р№'),(21,'РќРѕРІРѕР·РµР»Р°РЅРґСЃРєРёР№ Р‘РµР»С‹Р№','РќР·Р‘','Р‘РµР»С‹Р№'),(22,'Р§РµСЂРµРїР°С…РѕРІС‹Р№','Р§СЂРџ','РўРµРјРЅРѕ-РѕСЂР°РЅР¶РµРІС‹Р№');";
     	     	    st.executeUpdate(query1);	
     		}
     		catch(SQLException s){
@@ -111,7 +111,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_privoz";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Дата` VARCHAR(255) NOT NULL , `Объем` INT(50) NOT NULL  ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Р”Р°С‚Р°` VARCHAR(255) NOT NULL , `РћР±СЉРµРј` INT(50) NOT NULL  ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -130,7 +130,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_rashod";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Дата` VARCHAR(255) NOT NULL , `Объем` INT(50) NOT NULL  ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Р”Р°С‚Р°` VARCHAR(255) NOT NULL , `РћР±СЉРµРј` INT(50) NOT NULL  ,  PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -148,7 +148,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_zooplan";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Название работы` VARCHAR(255) NOT NULL , `Адрес` VARCHAR(255) NOT NULL  , `Доп. информация` VARCHAR(255) NOT NULL  , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РќР°Р·РІР°РЅРёРµ СЂР°Р±РѕС‚С‹` VARCHAR(255) NOT NULL , `РђРґСЂРµСЃ` VARCHAR(255) NOT NULL  , `Р”РѕРї. РёРЅС„РѕСЂРјР°С†РёСЏ` VARCHAR(255) NOT NULL  , PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -167,7 +167,7 @@ public class KFDB
     		Statement st = con.createStatement();
     		name_table = login + "_adres";
     		String table =
-    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `Название` VARCHAR(255) NOT NULL ,   PRIMARY KEY (`id`)) ENGINE = InnoDB;";
+    		"CREATE TABLE `gb_x_lera99`.`"+name_table+"` ( `id` INT NOT NULL AUTO_INCREMENT , `РќР°Р·РІР°РЅРёРµ` VARCHAR(255) NOT NULL ,   PRIMARY KEY (`id`)) ENGINE = InnoDB;";
     		st.executeUpdate(table);
     		System.out.println("Table creation process successfully!");
     		String query =
@@ -221,7 +221,7 @@ public class KFDB
     	if(pas == "")
 	    {   
 	    	f=false;
-	    	JOptionPane.showMessageDialog(null, "Неправильный пароль!", "Ошибка ввода", JOptionPane.ERROR_MESSAGE);
+	    	JOptionPane.showMessageDialog(null, "РќРµРїСЂР°РІРёР»СЊРЅС‹Р№ РїР°СЂРѕР»СЊ!", "РћС€РёР±РєР° РІРІРѕРґР°", JOptionPane.ERROR_MESSAGE);
 	    }
 	    else
 	    {
@@ -250,7 +250,7 @@ public class KFDB
     	    logins = rs.getString(1);
     	    System.out.print(logins);
     	    }
-    	    if(logins != ""){ JOptionPane.showMessageDialog(null, "Такой пользователь уже есть!", "Ошибка ввода", JOptionPane.ERROR_MESSAGE);}
+    	    if(logins != ""){ JOptionPane.showMessageDialog(null, "РўР°РєРѕР№ РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ СѓР¶Рµ РµСЃС‚СЊ!", "РћС€РёР±РєР° РІРІРѕРґР°", JOptionPane.ERROR_MESSAGE);}
     	    else{
     	    	    int count=0;
     	    		String query1 = "select count(*) from `users`";
@@ -268,7 +268,7 @@ public class KFDB
     		catch(SQLException s){
     		System.out.println("not!");
     		}	
-    	//catch (Exception e) { JOptionPane.showMessageDialog(null, "Логин должен содержать только латинские буквы и цифры", "Ошибка ввода", JOptionPane.ERROR_MESSAGE);}
+    	//catch (Exception e) { JOptionPane.showMessageDialog(null, "Р›РѕРіРёРЅ РґРѕР»Р¶РµРЅ СЃРѕРґРµСЂР¶Р°С‚СЊ С‚РѕР»СЊРєРѕ Р»Р°С‚РёРЅСЃРєРёРµ Р±СѓРєРІС‹ Рё С†РёС„СЂС‹", "РћС€РёР±РєР° РІРІРѕРґР°", JOptionPane.ERROR_MESSAGE);}
     }
     
     public String table_porod(String login)
