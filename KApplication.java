@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.*;
 import javax.swing.*;
@@ -27,42 +27,41 @@ public class KApplication extends JFrame
 
         public KApplication()
         {
-                super("Учет кроликов");
+                super("РЈС‡РµС‚ РєСЂРѕР»РёРєРѕРІ");
                 
                 Connection conn, conn1;
-                //Не забудьте указать вашего пользователя и пароль (у меня "root" и "masterkey" соответственно);
-               // baza = new KFDB("com.mysql.jdbc.Driver", "jdbc:mysql://mysql89.1gb.ru/gb_x_leravi", "gb_x_leravi", "db42ae5brt"); 
+                
                 String login = (new avtorizaciya()).getLogin();
                 String name_m = login+"_m";
                 String name_g = login+"_g";
                 String name_zooplan = login+"_zooplan";
                 menu = new JMenuBar();
                 setJMenuBar(menu);
-                file = new JMenu("Главная");
+                file = new JMenu("Р“Р»Р°РІРЅР°СЏ");
                 menu.add(file);
-                pol = new JMenuItem("Сменить пользователя");
+                pol = new JMenuItem("РЎРјРµРЅРёС‚СЊ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ");
                 file.add(pol);
-                exit = new JMenuItem("Выход");
+                exit = new JMenuItem("Р’С‹С…РѕРґ");
                 file.add(exit);
-                info = new JMenu("Информация");
+                info = new JMenu("РРЅС„РѕСЂРјР°С†РёСЏ");
                 menu.add(info);
-                breed = new JMenuItem("Справочник пород");
+                breed = new JMenuItem("РЎРїСЂР°РІРѕС‡РЅРёРє РїРѕСЂРѕРґ");
                 info.add(breed);
-                vakcin = new JMenuItem("Справочник вакцин");
+                vakcin = new JMenuItem("РЎРїСЂР°РІРѕС‡РЅРёРє РІР°РєС†РёРЅ");
                 info.add(vakcin);
-                loc = new JMenuItem("Справочник адресов");
+                loc = new JMenuItem("РЎРїСЂР°РІРѕС‡РЅРёРє Р°РґСЂРµСЃРѕРІ");
                 info.add(loc);
-                priv = new JMenuItem("Учет привоза корма");
+                priv = new JMenuItem("РЈС‡РµС‚ РїСЂРёРІРѕР·Р° РєРѕСЂРјР°");
                 info.add(priv);
-                ras = new JMenuItem("Учет расхода корма");
+                ras = new JMenuItem("РЈС‡РµС‚ СЂР°СЃС…РѕРґР° РєРѕСЂРјР°");
                 info.add(ras);
-                report = new JMenu("Отчеты");
+                report = new JMenu("РћС‚С‡РµС‚С‹");
                 menu.add(report);
-                help = new JMenu("Справка");
+                help = new JMenu("РЎРїСЂР°РІРєР°");
                 menu.add(help);
-                prog = new JMenuItem("О программе");
+                prog = new JMenuItem("Рћ РїСЂРѕРіСЂР°РјРјРµ");
                 help.add(prog);
-                hel = new JMenuItem("Помощь");
+                hel = new JMenuItem("РџРѕРјРѕС‰СЊ");
                 help.add(hel); 
                 JTabbedPane jtp = new JTabbedPane();
                 try {
@@ -87,47 +86,47 @@ public class KApplication extends JFrame
                     ImageIcon icon5 = new ImageIcon("dob.png"); 
     	            b13=new JButton(icon5); 
                     b13.setPreferredSize(new Dimension(30,30));
-                    b13.setToolTipText("Добавление нового кролика");
+                    b13.setToolTipText("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РєСЂРѕР»РёРєР°");
     	            b13.setVisible(true);
     	            p.add(b13);
                     ImageIcon icon1 = new ImageIcon("ob.gif"); 
     	            b=new JButton(icon1); 
                     b.setPreferredSize(new Dimension(30,30));
-                    b.setToolTipText("Обновление таблицы");
+                    b.setToolTipText("РћР±РЅРѕРІР»РµРЅРёРµ С‚Р°Р±Р»РёС†С‹");
     	            b.setVisible(true);
     	            p.add(b);
                     ImageIcon icon = new ImageIcon("s.jpg"); 
     	            b1=new JButton(icon); 
                     b1.setPreferredSize(new Dimension(30,30));
-                    b1.setToolTipText("Родовод кролика");
+                    b1.setToolTipText("Р РѕРґРѕРІРѕРґ РєСЂРѕР»РёРєР°");
     	            b1.setVisible(true);
     	            p.add(b1);
     	            ImageIcon icon2 = new ImageIcon("ves.png"); 
     	            b2=new JButton(icon2); 
                     b2.setPreferredSize(new Dimension(30,30));
-                    b2.setToolTipText("Вес кролика");
+                    b2.setToolTipText("Р’РµСЃ РєСЂРѕР»РёРєР°");
     	            b2.setVisible(true);
     	            p.add(b2);
                     ImageIcon icon3 = new ImageIcon("priv.gif"); 
     	            b3=new JButton(icon3); 
                     b3.setPreferredSize(new Dimension(30,30));
-                    b3.setToolTipText("Прививки кролика");
+                    b3.setToolTipText("РџСЂРёРІРёРІРєРё РєСЂРѕР»РёРєР°");
     	            b3.setVisible(true);
     	            p.add(b3);
     	            ImageIcon icon4 = new ImageIcon("del.gif"); 
     	            b10=new JButton(icon4); 
                     b10.setPreferredSize(new Dimension(30,30));
-                    b10.setToolTipText("Удаление записи");
+                    b10.setToolTipText("РЈРґР°Р»РµРЅРёРµ Р·Р°РїРёСЃРё");
     	            b10.setVisible(true);
     	            p.add(b10);
-    	            jtp.addTab("Самцы", p);
+    	            jtp.addTab("РЎР°РјС†С‹", p);
                     b.addActionListener((ActionEvent evt) -> {
                     	try{
                     		ResultSet rs1 =  st.executeQuery("SELECT * FROM `"+name_m+"`");
                             dbm.setDataSource(rs1);
                     	}
                     	catch (Exception ex) {
-                            JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                         }  
                         
                     });
@@ -171,7 +170,7 @@ public class KApplication extends JFrame
                     dbm.setDataSource(rs); 
                  
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
             }     
              
             try{    
@@ -195,46 +194,46 @@ public class KApplication extends JFrame
                 ImageIcon icon6 = new ImageIcon("dob.png"); 
 	            b14=new JButton(icon6); 
                 b14.setPreferredSize(new Dimension(30,30));
-                b14.setToolTipText("Добавление нового кролика");
+                b14.setToolTipText("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РєСЂРѕР»РёРєР°");
 	            b14.setVisible(true);
 	            p1.add(b14);
                 ImageIcon icon1 = new ImageIcon("ob.gif"); 
 	            b4=new JButton(icon1); 
                 b4.setPreferredSize(new Dimension(30,30));
-                b4.setToolTipText("Обновление таблицы");
+                b4.setToolTipText("РћР±РЅРѕРІР»РµРЅРёРµ С‚Р°Р±Р»РёС†С‹");
 	            b4.setVisible(true);
 	            p1.add(b4);
                 ImageIcon icon = new ImageIcon("s.jpg"); 
 	            b5=new JButton(icon); 
                 b5.setPreferredSize(new Dimension(30,30));
-                b5.setToolTipText("Родовод кролика");
+                b5.setToolTipText("Р РѕРґРѕРІРѕРґ РєСЂРѕР»РёРєР°");
 	            b5.setVisible(true);
 	            p1.add(b5);
 	            ImageIcon icon2 = new ImageIcon("ves.png"); 
 	            b6=new JButton(icon2); 
                 b6.setPreferredSize(new Dimension(30,30));
-                b6.setToolTipText("Вес кролика");
+                b6.setToolTipText("Р’РµСЃ РєСЂРѕР»РёРєР°");
 	            b6.setVisible(true);
 	            p1.add(b6);
                 ImageIcon icon3 = new ImageIcon("priv.gif"); 
 	            b7=new JButton(icon3); 
                 b7.setPreferredSize(new Dimension(30,30));
-                b7.setToolTipText("Прививки кролика");
+                b7.setToolTipText("РџСЂРёРІРёРІРєРё РєСЂРѕР»РёРєР°");
 	            b7.setVisible(true);
 	            p1.add(b7);
 	            ImageIcon icon5 = new ImageIcon("ok.jpg"); 
 	            b12=new JButton(icon5); 
                 b12.setPreferredSize(new Dimension(30,30));
-                b12.setToolTipText("Случки и окрол");
+                b12.setToolTipText("РЎР»СѓС‡РєРё Рё РѕРєСЂРѕР»");
 	            b12.setVisible(true);
 	            p1.add(b12);
 	            ImageIcon icon4 = new ImageIcon("del.gif"); 
 	            b11=new JButton(icon4); 
                 b11.setPreferredSize(new Dimension(30,30));
-                b11.setToolTipText("Удаление записи");
+                b11.setToolTipText("РЈРґР°Р»РµРЅРёРµ Р·Р°РїРёСЃРё");
 	            b11.setVisible(true);
 	            p1.add(b11);
-                jtp.addTab("Самки", p1);
+                jtp.addTab("РЎР°РјРєРё", p1);
                 
                 b14.addActionListener((ActionEvent evt) -> {
                 	new Add_g();
@@ -246,7 +245,7 @@ public class KApplication extends JFrame
                         dbm.setDataSource(rs1);
                 	}
                 	catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                     }  
                     
                 });
@@ -286,7 +285,7 @@ public class KApplication extends JFrame
             });   
                 dbm.setDataSource(rs); 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
             }    
             
             try{
@@ -308,22 +307,22 @@ public class KApplication extends JFrame
                 ImageIcon icon3 = new ImageIcon("dob.png"); 
 	            b15=new JButton(icon3); 
                 b15.setPreferredSize(new Dimension(30,30));
-                b15.setToolTipText("Добавление нового кролика");
+                b15.setToolTipText("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РєСЂРѕР»РёРєР°");
 	            b15.setVisible(true);
 	            p2.add(b15);
                 ImageIcon icon1 = new ImageIcon("ob.gif"); 
 	            b8=new JButton(icon1); 
                 b8.setPreferredSize(new Dimension(30,30));
-                b8.setToolTipText("Обновление таблицы");
+                b8.setToolTipText("РћР±РЅРѕРІР»РµРЅРёРµ С‚Р°Р±Р»РёС†С‹");
 	            b8.setVisible(true);
 	            p2.add(b8);
                 ImageIcon icon = new ImageIcon("del.gif"); 
 	            b9=new JButton(icon); 
                 b9.setPreferredSize(new Dimension(30,30));
-                b9.setToolTipText("Удаление записи");
+                b9.setToolTipText("РЈРґР°Р»РµРЅРёРµ Р·Р°РїРёСЃРё");
 	            b9.setVisible(true);
 	            p2.add(b9);
-                jtp.addTab("Зооплан", p2);
+                jtp.addTab("Р—РѕРѕРїР»Р°РЅ", p2);
                 dbm.setDataSource(rs);
                 
                 b15.addActionListener((ActionEvent evt) -> {
@@ -336,7 +335,7 @@ public class KApplication extends JFrame
                         dbm.setDataSource(rs1);
                 	}
                 	catch (Exception ex) {
-                        JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
                     }  
                     
                 });
@@ -356,7 +355,7 @@ public class KApplication extends JFrame
                 });
                     
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, ex.getMessage(), "Ошибка подключения к БД!", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(null, ex.getMessage(), "РћС€РёР±РєР° РїРѕРґРєР»СЋС‡РµРЅРёСЏ Рє Р‘Р”!", JOptionPane.ERROR_MESSAGE);
         }    
 
             
