@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.Choice;
 import java.awt.Font;
@@ -34,7 +34,7 @@ public class Add_w_g {
 	
 	Add_w_g(int row, String name_table, String login){
  
-	    JFrame fr = new JFrame("Добавление нового веса");
+	    JFrame fr = new JFrame("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РІРµСЃР°");
 		fr.setSize(305, 250);
 	    fr.setLocationRelativeTo(null);
 	    fr.setVisible(true);
@@ -43,12 +43,12 @@ public class Add_w_g {
 	    p = new JPanel();
 	    p.setLayout(null);
 	     
-	    l = new JLabel("Добавление нового веса");
+	    l = new JLabel("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕРіРѕ РІРµСЃР°");
 		l.setBounds(40, 10, 350, 20);
 		l.setFont(f1);
 		p.add(l);
 	    
-		l1 = new JLabel("Дата");
+		l1 = new JLabel("Р”Р°С‚Р°");
 		l1.setBounds(65, 40, 100, 20);
 		l1.setFont(f);
 		p.add(l1);
@@ -81,7 +81,7 @@ public class Add_w_g {
             }
         });
 	    
-		l2 = new JLabel("Вес"); 
+		l2 = new JLabel("Р’РµСЃ"); 
 		l2.setBounds(65, 90, 150, 25);
 		l2.setFont(f);
 		p.add(l2);
@@ -91,7 +91,7 @@ public class Add_w_g {
 		p.add(text1);
 	    
 	    
-	    b = new JButton("Добавить");
+	    b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
 	    b.setBounds(10, 170, 130, 20);
 	    b.setVisible(true);
 	    b.setFont(f);
@@ -115,7 +115,7 @@ public class Add_w_g {
             	
             	try {
             		int id = count + 1;
-            		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id`, `Дата`, `Вес(граммы)`) VALUES ('"+id+"', '"+data+"', '"+weight+"');";
+            		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id`, `Р”Р°С‚Р°`, `Р’РµСЃ(РіСЂР°РјРјС‹)`) VALUES ('"+id+"', '"+data+"', '"+weight+"');";
                     System.out.println(id);
                     m.connect().executeUpdate(query);
                 } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -127,7 +127,7 @@ public class Add_w_g {
             
         });
 	    
-	    b1 = new JButton("Выйти");
+	    b1 = new JButton("Р’С‹Р№С‚Рё");
 	    b1.setBounds(150, 170, 130, 20);
 	    b1.setVisible(true);
 	    b1.setFont(f);

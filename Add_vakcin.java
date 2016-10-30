@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -21,7 +21,7 @@ public class Add_vakcin extends JFrame{
 	
 	Add_vakcin(String login){
 		
-		super("Добавление новой прививки");
+		super("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ РїСЂРёРІРёРІРєРё");
 		setSize(305, 300);
 	    setLocationRelativeTo(null);
 	    setVisible(true);
@@ -30,12 +30,12 @@ public class Add_vakcin extends JFrame{
 	    p = new JPanel();
 	    p.setLayout(null);
 	     
-	    l = new JLabel("Добавление новой прививки");
+	    l = new JLabel("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ РїСЂРёРІРёРІРєРё");
 		l.setBounds(40, 10, 350, 20);
 		l.setFont(f1);
 		p.add(l);
 	    
-		l1 = new JLabel("Название");
+		l1 = new JLabel("РќР°Р·РІР°РЅРёРµ");
 		l1.setBounds(65, 40, 100, 20);
 		l1.setFont(f);
 		p.add(l1);
@@ -44,7 +44,7 @@ public class Add_vakcin extends JFrame{
 		text.setBounds(65, 60, 160, 20);
 	    p.add(text);
 	  
-		l2 = new JLabel("Назначать с ... дней"); 
+		l2 = new JLabel("РќР°Р·РЅР°С‡Р°С‚СЊ СЃ ... РґРЅРµР№"); 
 		l2.setBounds(65, 90, 150, 25);
 		l2.setFont(f);
 		p.add(l2);
@@ -53,7 +53,7 @@ public class Add_vakcin extends JFrame{
 	    text1.setBounds(65, 120, 160, 20);
 	    p.add(text1);
 	    
-	    l3 = new JLabel("Срок действия"); 
+	    l3 = new JLabel("РЎСЂРѕРє РґРµР№СЃС‚РІРёСЏ"); 
 		l3.setBounds(65, 150, 150, 25);
 		l3.setFont(f);
 		p.add(l3);
@@ -62,7 +62,7 @@ public class Add_vakcin extends JFrame{
 	    text2.setBounds(65, 180, 160, 20);
 	    p.add(text2);
 	    
-	    b = new JButton("Добавить");
+	    b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
 	    b.setBounds(10, 220, 130, 20);
 	    b.setVisible(true);
 	    b.setFont(f);
@@ -81,7 +81,7 @@ public class Add_vakcin extends JFrame{
             
         });
 	    
-	    b1 = new JButton("Выйти");
+	    b1 = new JButton("Р’С‹Р№С‚Рё");
 	    b1.setBounds(150, 220, 130, 20);
 	    b1.setVisible(true);
 	    b1.setFont(f);

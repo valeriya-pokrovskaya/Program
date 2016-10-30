@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.Checkbox;
 import java.awt.Choice;
@@ -37,7 +37,7 @@ public class Add_sl_okr {
 		ArrayList<String> a = new ArrayList<String>();
 	     a = m.getPar(); 
 	    int count = m.getCount(); 
-	    JFrame fr = new JFrame("Добавление новой случки");
+	    JFrame fr = new JFrame("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ СЃР»СѓС‡РєРё");
 		fr.setSize(305, 450);
 	    fr.setLocationRelativeTo(null);
 	    fr.setVisible(true);
@@ -46,12 +46,12 @@ public class Add_sl_okr {
 	    p = new JPanel();
 	    p.setLayout(null);
 	     
-	    l = new JLabel("Добавление новой случки");
+	    l = new JLabel("Р”РѕР±Р°РІР»РµРЅРёРµ РЅРѕРІРѕР№ СЃР»СѓС‡РєРё");
 		l.setBounds(40, 10, 350, 20);
 		l.setFont(f1);
 		p.add(l);
 	    
-		l1 = new JLabel("Дата соития");
+		l1 = new JLabel("Р”Р°С‚Р° СЃРѕРёС‚РёСЏ");
 		l1.setBounds(65, 40, 100, 20);
 		l1.setFont(f);
 		p.add(l1);
@@ -84,7 +84,7 @@ public class Add_sl_okr {
             }
         });
 	    
-		l2 = new JLabel("Партнер"); 
+		l2 = new JLabel("РџР°СЂС‚РЅРµСЂ"); 
 		l2.setBounds(65, 90, 150, 25);
 		l2.setFont(f);
 		p.add(l2);
@@ -94,7 +94,7 @@ public class Add_sl_okr {
 		for(int i = 0; i < count; i++){ ch.add(a.get(i));}
 		p.add(ch);
 	    
-	    l3 = new JLabel("Дата окрола"); 
+	    l3 = new JLabel("Р”Р°С‚Р° РѕРєСЂРѕР»Р°"); 
 		l3.setBounds(65, 150, 150, 25);
 		l3.setFont(f);
 		p.add(l3);
@@ -127,7 +127,7 @@ public class Add_sl_okr {
             }
         });
 		
-		l3 = new JLabel("Рождено"); 
+		l3 = new JLabel("Р РѕР¶РґРµРЅРѕ"); 
 		l3.setBounds(65, 210, 150, 25);
 		l3.setFont(f);
 		p.add(l3);
@@ -136,7 +136,7 @@ public class Add_sl_okr {
 		text2.setBounds(65, 240, 160, 20);
 		p.add(text2);
 		
-		l4 = new JLabel("Мертворожденные"); 
+		l4 = new JLabel("РњРµСЂС‚РІРѕСЂРѕР¶РґРµРЅРЅС‹Рµ"); 
 		l4.setBounds(65, 270, 150, 25);
 		l4.setFont(f);
 		p.add(l4);
@@ -145,12 +145,12 @@ public class Add_sl_okr {
 		text3.setBounds(65, 300, 160, 20);
 		p.add(text3);
 		
-		cb1 = new Checkbox("Инбридинг"); 
+		cb1 = new Checkbox("РРЅР±СЂРёРґРёРЅРі"); 
 	    cb1.setBounds(65, 330, 160, 30); 
 	    cb1.setFont(f);
 	    p.add(cb1); 
 		
-	    b = new JButton("Добавить");
+	    b = new JButton("Р”РѕР±Р°РІРёС‚СЊ");
 	    b.setBounds(10, 370, 130, 20);
 	    b.setVisible(true);
 	    b.setFont(f);
@@ -164,8 +164,8 @@ public class Add_sl_okr {
                 data2 = text1.getText();
                 kol_r = text2.getText();
                 kol_m = text3.getText();
-                if (cb1.getState()==true){ i="Да";}
-                else{i="Нет";}
+                if (cb1.getState()==true){ i="Р”Р°";}
+                else{i="РќРµС‚";}
                 int count=0;
             	try {
          		String query = "select count(*) from `gb_x_lera99`.`"+name_table+"`";
@@ -179,7 +179,7 @@ public class Add_sl_okr {
             	
             	try {
             		int id = count + 1;
-            		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id`, `Дата соития`, `Партнер`, `Дата окрола`, `Рождено`, `Мертворожденные`, `Инбридинг`) VALUES ('"+id+"', '"+data1+"', '"+name+"', '"+data2+"', '"+kol_r+"', '"+kol_m+"', '"+i+"');";
+            		String query = "INSERT INTO  `gb_x_lera99`.`"+name_table+"` (`id`, `Р”Р°С‚Р° СЃРѕРёС‚РёСЏ`, `РџР°СЂС‚РЅРµСЂ`, `Р”Р°С‚Р° РѕРєСЂРѕР»Р°`, `Р РѕР¶РґРµРЅРѕ`, `РњРµСЂС‚РІРѕСЂРѕР¶РґРµРЅРЅС‹Рµ`, `РРЅР±СЂРёРґРёРЅРі`) VALUES ('"+id+"', '"+data1+"', '"+name+"', '"+data2+"', '"+kol_r+"', '"+kol_m+"', '"+i+"');";
                     System.out.println(id);
                     m.connect().executeUpdate(query);
                 } catch (SQLException | ClassNotFoundException | IOException ex) {
@@ -191,7 +191,7 @@ public class Add_sl_okr {
             
         });
 	    
-	    b1 = new JButton("Выйти");
+	    b1 = new JButton("Р’С‹Р№С‚Рё");
 	    b1.setBounds(150, 370, 130, 20);
 	    b1.setVisible(true);
 	    b1.setFont(f);

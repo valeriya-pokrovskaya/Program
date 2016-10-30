@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -16,16 +16,16 @@ public class Add_rabbit extends JFrame{
 	JPanel p;
 	
 	public Add_rabbit(){
-		super("Добавление кролика");
+		super("Р”РѕР±Р°РІР»РµРЅРёРµ РєСЂРѕР»РёРєР°");
 		Font font = new Font("Segoe Script",  Font.BOLD,  14);
-	    JLabel l = new JLabel("Выберете какого пола добавить кролика:");
+	    JLabel l = new JLabel("Р’С‹Р±РµСЂРµС‚Рµ РєР°РєРѕРіРѕ РїРѕР»Р° РґРѕР±Р°РІРёС‚СЊ РєСЂРѕР»РёРєР°:");
 		l.setBounds(90, 10, 50, 10);
 		l.setFont(font);
 		JPanel p = new JPanel();
 		p.add(l);
 		ButtonGroup bg = new ButtonGroup();
-        r1 = new JRadioButton("Самец");
-        r2 = new JRadioButton("Самка");
+        r1 = new JRadioButton("РЎР°РјРµС†");
+        r2 = new JRadioButton("РЎР°РјРєР°");
         bg.add(r1);
         bg.add(r2);
         
