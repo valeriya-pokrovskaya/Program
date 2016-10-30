@@ -1,4 +1,4 @@
-package app;
+п»їpackage app;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -17,7 +17,7 @@ public class Calendar {
 	        d = new JDialog();
 	        d.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
 	        d.setModal(true);
-	        String[] header = { "Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб" };
+	        String[] header = { "Р’СЃ", "РџРЅ", "Р’С‚", "РЎСЂ", "Р§С‚", "РџС‚", "РЎР±" };
 	        JPanel p1 = new JPanel(new GridLayout(7, 7));
 	        p1.setPreferredSize(new Dimension(360, 120));
 	 
@@ -58,8 +58,8 @@ public class Calendar {
 	        }
 	        JPanel p2 = new JPanel(new GridLayout(1, 3));
 	 
-	        // Предыдущий месяц
-	        JButton previous = new JButton("<< Назад");
+	        // РџСЂРµРґС‹РґСѓС‰РёР№ РјРµСЃСЏС†
+	        JButton previous = new JButton("<< РќР°Р·Р°Рґ");
 	        previous.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent ae) {
 	                month--;
@@ -68,11 +68,11 @@ public class Calendar {
 	        });
 	        p2.add(previous);
 	 
-	        // Текущий месяц
+	        // РўРµРєСѓС‰РёР№ РјРµСЃСЏС†
 	        p2.add(l);
 	 
-	        // Следующий месяц
-	        JButton next = new JButton("Вперед >>");
+	        // РЎР»РµРґСѓСЋС‰РёР№ РјРµСЃСЏС†
+	        JButton next = new JButton("Р’РїРµСЂРµРґ >>");
 	        next.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent ae) {
 	                month++;
@@ -107,15 +107,13 @@ public class Calendar {
 	            button[x].setText("" + day);
 	        }
 	        l.setText(sdf.format(cal.getTime()));
-	        d.setTitle("Выбор даты");
+	        d.setTitle("Р’С‹Р±РѕСЂ РґР°С‚С‹");
 	    }
 	 
 	    public String setPickedDate() {
 	        if (day.equals("")) {
 	            return day;
 	        }
-	 
-	        // Set the return date format
 	        java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat(
 	                "yyyy-MM-dd");
 	 
